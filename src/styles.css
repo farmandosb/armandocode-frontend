@@ -90,9 +90,34 @@
     .navbar .navbar-brand, .navbar .nav-link {
         color: #EEE !important;
     }
+    
 
     
       
+}
+
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 100% !important;
+    margin: 0px !important;
+    height: 99% !important;
+
+    
+}
+
+.modal-content {
+    
+    height: 100%;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-body li{
+    padding-top: 25px;
+    
+}
 }
 
 
