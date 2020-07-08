@@ -84,7 +84,7 @@
 
     .navbar.active {
         background: rgba(255, 255, 255, 0) !important;
-        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0);
+        
     }
 
     .navbar .navbar-brand, .navbar .nav-link {
@@ -120,6 +120,22 @@
 }
 }
 
+
+
+.carousel-caption{
+    top: 50%;
+    transform: translateY(-30%);
+    bottom: initial;
+}
+.carousel-item{
+    -webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;
+}
+
+.pt-6{
+    padding-top: 90px;
+}
 
 
 
