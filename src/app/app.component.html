@@ -11,15 +11,21 @@
       <div class="modal-body ">
         <ul class="navbar-nav ">
           <li class="nav-item active ">
-            <a class="nav-link" href="#">{{title}} <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-dismiss="modal">Link</a>
+            <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank" data-dismiss="modal">Aprendamos Java</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://farmandosb.github.io/zeldasounds/" target="_blank" data-dismiss="modal">Botonera de sonidos Zelda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
           </li>
 
         </ul>
       </div>
-    </div>
+    </div>  
   </div>
 </div>
 
@@ -37,10 +43,13 @@
 
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">{{title}} <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" data-dismiss="modal">Link</a>
+        <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank" data-dismiss="modal">Aprendamos Java</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
       </li>
     </ul>
   </div>
@@ -58,16 +67,15 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="assets/img/c0.png" alt="First slide">
       <div class="carousel-caption d-block">
-        <h3>¿Quieres tener tu propia página web?</h3>
-        <p class="d-none d-sm-block">Diseñamos y publicamos tu página web por la mejor relación precio-calidad!.</p>
+        <a href="https://introcs.cs.princeton.edu/java/home/" target="_blank"><h3>Aprendamos Java</h3></a>
+        <p class="d-none d-sm-block">Estamos haciendo juntos el curso de la universidad de Princeton</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="assets/img/c1.png" alt="Second slide">
+      <img class="d-block w-100" src="assets/img/c5.png" alt="Second slide">
       <div class="carousel-caption d-block">
-        <h3>Aumenta el impacto de tu idea a través de la web!</h3>
-        <p class="d-none d-sm-block">Con una página web bien diseñada podrás aumentar tus visualizaciones y alcanzar
-          potenciales clientes .</p>
+        <a href="https://farmandosb.github.io/zeldasounds/" target="_blank"><h3>Botonera de sonidos de Zelda utilizando HTML, CSS y Javascript plano</h3></a>
+        <p class="d-none d-sm-block"></p>
       </div>
     </div>
     <div class="carousel-item">
@@ -102,7 +110,7 @@
 </div>
 <div class="container">
 
-  <hr class="featurette-divider">
+  <!--hr class="featurette-divider">
 
   <div class="row featurette">
     <div class="col-md-7">
@@ -148,7 +156,7 @@
       <img class="bd-placeholder-img bd-placeholder-img-lg img-fluid mx-auto" src="assets/img/hvsl.jpg" width="500"
         height="500" focusable="false">
     </div>
-  </div>
+  </div-->
 
 
 
@@ -157,16 +165,19 @@
 <router-outlet></router-outlet>
 
 
-<footer class="footer">
+<footer class="footer" id="contacto">
   <div class="container text-white">
     <br>
     <div class="row">
-   
-      <div class="col-12">
-        <ul class="list-group list-group-horizontal social-media justify-content-md-center" >
-          <li class="list-group-item social-icon facebook mx-2"></li>
-          <li class="list-group-item social-icon instagram mx-2">  </li>
-        </ul>
+      
+      <div class="col-12 text-center">
+         <ul class="social-network social-circle">
+          
+          <li><a href="https://www.instagram.com/armando.code/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/Armando.Code/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/freddy-armando-suarez/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCTwDg2KEkkgBg7rO5fbmUEQ/" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+         </ul>	
        
       </div>
      
@@ -175,6 +186,7 @@
       <div class="col-12 text-center pt-4">
         <p>Copyright &copy; <a href="https://farmandosb.github.io/armandocode">armandocode</a> by
           <a href="https://farmandosb.github.io">farmandosb</a>.</p>
+          <p>En construcción.</p>
       </div>
     </div>
   </div>
