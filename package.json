@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ngbuild": "ng build --prod --baseHref='https://farmandosb.github.io/armandocode/'"
+    "ngbuild": "ng build --prod --baseHref --base-href /armandocode/'"
   },
   "private": true,
   "dependencies": {
