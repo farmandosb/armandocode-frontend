@@ -12,7 +12,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
 import { RouterModule } from '@angular/router';
-import {NgxWebstorageModule} from 'ngx-webstorage';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import {NgxWebstorageModule} from 'ngx-webstorage';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxWebstorageModule.forRoot(),
+    
     RouterModule.forRoot([
       {path:'register', component: RegisterComponent},
       {path:'login', component: LoginComponent},
