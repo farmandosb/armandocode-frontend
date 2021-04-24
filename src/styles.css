@@ -248,6 +248,54 @@ ul.social-network {
   .social-network a {
     background-color: #F9F9F9;
   }
+
+
+
+  .cardpost {
+    background: #fff;
+    -webkit-box-shadow: 0 1px 4px rgb(0 0 0 / 4%);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 4%);
+    border: 1px solid rgba(0,0,0,.09);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px!important;
+    
+}
+.blog-title{
+  color: black;
+  text-decoration: none  !important;
+}
+
+.flex-center{
+  display:flex !important;
+}
+
+.post-inline{
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    color: #757575;
+    fill: rgba(0,0,0,.54);
+    font-size: 16px;
+}
+.post-inline-author{
+  font-size: 16px;
+  line-height: 1.4;
+  padding-left: 10px;
+  text-rendering: auto;
+}
+.avatar{
+  display: block;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    line-height: normal;
+    position: relative;
+}
+
+
+
+ 
   
   
 

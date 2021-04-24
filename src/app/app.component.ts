@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AddPostService } from './add-post.service';
+import { PostPayLoad } from './add-post/post-payload';
+import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -9,6 +13,18 @@ import { Component } from '@angular/core';
 
 
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'armandocode';
+  
+    constructor(public authService:AuthService){
+  
+    }
+    ngOnInit(){
+  
+    }
+    logout(){
+      this.authService.logout();
+    }
+
+ 
 }

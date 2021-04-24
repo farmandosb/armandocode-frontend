@@ -1,0 +1,18 @@
+<p>header works!</p>
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="title"> SpringBLog </h1>
+            </div>
+            <div class="col-md-3" ng-if="authService.isAuthenticated()">
+                <a href="/add-post" class="new-post"> Add post </a>
+
+            </div>
+            <div class="col-md-3">
+                <a href="/login" class="login btn btn-default"> Login </a>
+                <a href="/register" class="register btn btn-default"> Register </a>
+            </div>
+        </div>
+    </div>
+</div>

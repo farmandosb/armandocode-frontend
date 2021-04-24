@@ -1,0 +1,37 @@
+<div class="container justify-content-center">
+        <div class="col-md-3">
+            <a href="/add-post" class="new-post"> Agregar Post </a>
+            <div class="nav-item" *ngIf="authService.isAuthenticated">
+                <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
+              </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row cardpost" *ngFor="let post of posts | async">
+                    <div>
+                        <div class="flex-center">
+                            <div class="post-inline-avatar">
+                                <i class="fas fa-user avatar"></i>
+                            </div>
+                            <div class="post-inline-author">
+                                <a>{{post.username}}</a>
+                                <div>5 min read</div>
+                            </div>
+                            
+                        </div>
+                        <h3> <a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
+                    
+                        <p [innerHTML]="post.content"></p>
+                        <div>
+                            <a type="button" href="/post/{{post.id}}" class="read-more btn btn-default">Leer más</a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+ 

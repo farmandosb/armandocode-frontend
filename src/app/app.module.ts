@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from './service/user.service';
@@ -12,6 +12,14 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterSuccessComponent } from './auth/register-success/register-success.component';
 import { RouterModule } from '@angular/router';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { AddPostComponent } from './add-post/add-post.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { HttpClientInterceptor } from './http-client-interceptor';
+import { PostComponent } from './post/post.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -21,7 +29,11 @@ import { RouterModule } from '@angular/router';
     UserFormComponent,
     RegisterComponent,
     LoginComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+    HomeComponent,
+    HeaderComponent,
+    AddPostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -29,15 +41,20 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
-      {path:'register', component: RegisterComponent},
-      {path:'login', component: LoginComponent},
-      {path:'register-success', component: RegisterSuccessComponent}
-    
-    ])
+      { path: '', component: HomeComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'post/:id', component: PostComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register-success', component: RegisterSuccessComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'add-post', component: AddPostComponent }
+    ], { relativeLinkResolution: 'legacy' }),
+    EditorModule
   ],
-  providers: [UserService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

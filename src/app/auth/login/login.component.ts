@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { LoginPayload } from '../login-payload';
 
@@ -12,9 +13,10 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginPayload: LoginPayload;
+  
 
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService, private router: Router) { 
     this.loginForm = new FormGroup({
       username: new FormControl(),
       password: new FormControl()
@@ -31,14 +33,17 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginPayload.username = this.loginForm.get('username').value;
     this.loginPayload.password = this.loginForm.get('password').value;
-
+    console.log("username:"+this.loginPayload.username);
+    console.log("password:"+this.loginPayload.password);
+    
     this.authService.login(this.loginPayload).subscribe(data=>{
-      if(data){
-        console.log("login success");
-      }else{
-        console.log("login failure")
-      }
-    })
+      console.log('login success');
+      this.router.navigateByUrl('/');
+
+    },  error => {
+      console.log('login failed');
+    });
+
   }
 
 }

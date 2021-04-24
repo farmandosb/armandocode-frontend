@@ -14,14 +14,14 @@
             <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank" data-dismiss="modal">Aprendamos Java</a>
+            <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank"
+              data-dismiss="modal">Aprendamos Java</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://farmandosb.github.io/zeldasounds/" target="_blank" data-dismiss="modal">Botonera de sonidos Zelda</a>
+            <a class="nav-link" href="https://farmandosb.github.io/zeldasounds/" target="_blank"
+              data-dismiss="modal">Botonera de sonidos Zelda</a>
           </li>
-          <li class="nav-item">
-            <a routerLink="/users" class="nav-link"  data-dismiss="modal">Usuarios</a>
-          </li>
+         
           <li class="nav-item">
             <a routerLink="/register" class="nav-link" data-dismiss="modal">Registro</a>
           </li>
@@ -31,10 +31,15 @@
           <li class="nav-item">
             <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
           </li>
-
+          <li class="nav-item" *ngIf="authService.isAuthenticated">
+            <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Add post</a>
+          </li>
+          <div class="nav-item" *ngIf="authService.isAuthenticated">
+            <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
+          </div>
         </ul>
       </div>
-    </div>  
+    </div>
   </div>
 </div>
 
@@ -55,22 +60,32 @@
         <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank" data-dismiss="modal">Aprendamos Java</a>
+        <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank"
+          data-dismiss="modal">Aprendamos Java</a>
+      </li>
+    
+      <li class="nav-item">
+        <a routerLink="/register" class="nav-link" data-dismiss="modal">Registro</a>
       </li>
       <li class="nav-item">
-        <a routerLink="/users" class="nav-link" data-dismiss="modal">Usuarios</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/adduser" class="nav-link" data-dismiss="modal">Registro</a>
+        <a routerLink="/login" class="nav-link" data-dismiss="modal">Login</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAuthenticated()">
+        <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Add post</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAuthenticated()"> 
+        <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
       </li>
     </ul>
   </div>
 </nav>
 
-<div id="carouselExampleIndicators" class="carousel slide pt-6" data-ride="carousel">
+
+
+<!--div id="carouselExampleIndicators" class="carousel slide pt-6" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -122,8 +137,41 @@
   </div>
 
 
-</div>
-<div class="container">
+</div-->
+<div class="container pt-6 mt-2">
+
+  <div class="row">
+   
+    <div class="col-sm-10">
+      <h3>
+        Armandocode Blog
+        <small class="text-muted">Aprende Java con nosotros.</small>
+        
+      </h3>
+
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-sm">
+      <h3>
+        ArmandoGeek
+        <small class="text-muted">Emula GameCube y N64 con tu Moto G100</small>
+        <div class="card mt-5" style="width: 18rem;">
+          <img class="card-img-top" src="assets/img/minizelda.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Moto G100 Running Dolphin Emulator on TV using HDMI cable</h5>
+            <a href="https://youtu.be/iryVVVLqLK8" class="btn btn-danger">Ver en Youtube</a>
+          </div>
+        </div>
+        <div class="card mt-5" style="width: 18rem;">
+          <img class="card-img-top" src="assets/img/minizelda2.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Zelda The Wind Waker en un Moto G100 - Parte 1</h5>
+            <a href="https://youtu.be/kDmeaebBlgE" class="btn btn-danger">Ver en Youtube</a>
+          </div>
+        </div>
+      </h3>
+    </div>
+  </div>
 
   <!--hr class="featurette-divider">
 
@@ -177,31 +225,36 @@
 
 </div>
 
-<router-outlet></router-outlet>
 
 
-<footer class="footer" id="contacto">
+
+<footer class="footer position-bottom" id="contacto">
   <div class="container text-white">
     <br>
     <div class="row">
-      
+
       <div class="col-12 text-center">
-         <ul class="social-network social-circle">
-          
-          <li><a href="https://www.instagram.com/armando.code/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="https://www.facebook.com/Armando.Code/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/freddy-armando-suarez/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCTwDg2KEkkgBg7rO5fbmUEQ/" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
-         </ul>	
-       
+        <ul class="social-network social-circle">
+
+          <li><a href="https://www.instagram.com/armando.code/" class="icoInstagram" title="Instagram"><i
+                class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/Armando.Code/" class="icoFacebook" title="Facebook"><i
+                class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/freddy-armando-suarez/" class="icoLinkedin" title="Linkedin"><i
+                class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCTwDg2KEkkgBg7rO5fbmUEQ/" class="icoYoutube" title="Youtube"><i
+                class="fa fa-youtube"></i></a></li>
+        </ul>
+
       </div>
-     
+
     </div>
     <div class="row">
       <div class="col-12 text-center pt-4">
         <p>Copyright &copy; <a href="https://farmandosb.github.io/armandocode">armandocode</a> by
-          <a href="https://farmandosb.github.io">farmandosb</a>.</p>
-          <p>En construcción.</p>
+          <a href="https://farmandosb.github.io">farmandosb</a>.
+        </p>
+        <p>v1.0.0</p>
       </div>
     </div>
   </div>
