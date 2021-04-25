@@ -9,12 +9,11 @@ import { map } from 'rxjs/operators';
 import { LocalStorageService } from 'ngx-webstorage';
 import { URLBackend } from '../url';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
- 
+
   private url = URLBackend.baseURL+'/api/auth/';
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
@@ -24,7 +23,6 @@ export class AuthService {
     return this.httpClient.post(this.url + 'signup', registerPayload)
   }
 
-
   login(loginPayload: LoginPayload): Observable<boolean> {
     return this.httpClient.post<JwtAuthResponse>(this.url + 'login', loginPayload).pipe(map(data => {
       this.localStorageService.store('authenticationToken', data.authenticationToken);
@@ -32,7 +30,6 @@ export class AuthService {
       return true;
     }));
   }
-
 
   isAuthenticated() : Boolean {
     return this.localStorageService.retrieve('username')!=null
