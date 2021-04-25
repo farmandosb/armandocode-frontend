@@ -45,7 +45,7 @@ class AddPostService {
         this.httpCLient = httpCLient;
     }
     addPost(postPayLoad) {
-        return this.httpCLient.post(_url__WEBPACK_IMPORTED_MODULE_1__["URLBackend"].baseURL, postPayLoad);
+        return this.httpCLient.post(_url__WEBPACK_IMPORTED_MODULE_1__["URLBackend"].baseURL + "/api/posts", postPayLoad);
     }
     getAllPosts() {
         return this.httpCLient.get(_url__WEBPACK_IMPORTED_MODULE_1__["URLBackend"].baseURL + "/api/posts/all");

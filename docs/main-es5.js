@@ -83,7 +83,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AddPostService, [{
         key: "addPost",
         value: function addPost(postPayLoad) {
-          return this.httpCLient.post(_url__WEBPACK_IMPORTED_MODULE_1__["URLBackend"].baseURL, postPayLoad);
+          return this.httpCLient.post(_url__WEBPACK_IMPORTED_MODULE_1__["URLBackend"].baseURL + "/api/posts", postPayLoad);
         }
       }, {
         key: "getAllPosts",

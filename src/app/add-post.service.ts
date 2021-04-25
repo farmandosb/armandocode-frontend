@@ -14,7 +14,7 @@ export class AddPostService {
   }
 
   addPost(postPayLoad: PostPayLoad) {
-    return this.httpCLient.post(URLBackend.baseURL, postPayLoad);
+    return this.httpCLient.post(URLBackend.baseURL+"/api/posts", postPayLoad);
   }
 
   getAllPosts(): Observable<Array<PostPayLoad>>{
