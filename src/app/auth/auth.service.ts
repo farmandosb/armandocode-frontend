@@ -7,6 +7,7 @@ import { RegisterPayload } from './register-payload';
 
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from 'ngx-webstorage';
+import { URLBackend } from '../url';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 })
 export class AuthService {
  
-  private url = 'http://localhost:9090/api/auth/';
+  private url = URLBackend.baseURL+'/api/auth/';
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
