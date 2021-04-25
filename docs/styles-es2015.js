@@ -539,9 +539,9 @@ module.exports = exported;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\fredd\documents\springtoolsuite\w6\lp1\src\styles.css */"./src/styles.css");
-__webpack_require__(/*! C:\Users\fredd\documents\springtoolsuite\w6\lp1\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-module.exports = __webpack_require__(/*! C:\Users\fredd\documents\springtoolsuite\w6\lp1\src\assets\css\floating-wpp.css */"./src/assets/css/floating-wpp.css");
+__webpack_require__(/*! C:\Users\fredd\Documents\SpringToolSuite\w6\lp1\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\Users\fredd\Documents\SpringToolSuite\w6\lp1\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+module.exports = __webpack_require__(/*! C:\Users\fredd\Documents\SpringToolSuite\w6\lp1\src\assets\css\floating-wpp.css */"./src/assets/css/floating-wpp.css");
 
 
 /***/ })

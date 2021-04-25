@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { PostPayLoad } from './add-post/post-payload';
 import { URLBackend } from './url';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,5 +24,5 @@ export class AddPostService {
   getPost(permaLink: Number):Observable<PostPayLoad>{
     return this.httpCLient.get<PostPayLoad>(URLBackend.baseURL+permaLink);
   }
- 
+
 }
