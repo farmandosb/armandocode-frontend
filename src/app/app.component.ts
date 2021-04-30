@@ -16,9 +16,11 @@ import { AuthService } from './auth/auth.service';
 export class AppComponent implements OnInit{
   title = 'armandocode';
   env = environment;
+  private username;
   
     constructor(public authService:AuthService){
       //console.log("enviroment production: "+environment.apiUrl); // Logs false for default environment
+      this.username = authService.getUsername;
   
     }
     ngOnInit(){
@@ -28,5 +30,8 @@ export class AppComponent implements OnInit{
       this.authService.logout();
     }
 
+    getUsername(): String {
+      return this.username;
+    }
  
 }

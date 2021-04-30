@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  private url = environment.apiUrl+'/api/auth/';
+  private url = environment.apiUrl + '/api/auth/';
   private username = this.localStorageService.retrieve('username');
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
@@ -33,12 +33,16 @@ export class AuthService {
     }));
   }
 
-  isAuthenticated() : Boolean {
-    return this.localStorageService.retrieve('username')!=null
+  isAuthenticated(): Boolean {
+    return this.localStorageService.retrieve('username') != null
   }
 
   logout() {
     this.localStorageService.clear('authenticationToken');
     this.localStorageService.clear('username');
+  }
+
+  getUsername(): String {
+    return this.username;
   }
 }

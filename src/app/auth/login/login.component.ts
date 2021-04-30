@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginPayload.username = this.loginForm.get('username').value;
     this.loginPayload.password = this.loginForm.get('password').value;
-    console.log("username:"+this.loginPayload.username);
-    console.log("password:"+this.loginPayload.password);
+    //console.log("username:"+this.loginPayload.username);
+    //console.log("password:"+this.loginPayload.password);
     
     this.authService.login(this.loginPayload).subscribe(data=>{
       console.log('login success');

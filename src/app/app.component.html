@@ -78,7 +78,7 @@
         <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Crear Post</a>
       </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()">
-        <a routerLink="/" class="nav-link" data-dismiss="modal">{{authService.username}}</a>
+        <a routerLink="/" class="nav-link" data-dismiss="modal">{{authService.getUsername()}}</a>
       </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()"> 
         <a routerLink="/" class="nav-link" data-dismiss="modal" (click)="logout()">Logout</a>
