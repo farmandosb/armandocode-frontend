@@ -15,6 +15,7 @@
           "options": {
             "outputPath": "docs/",
             "index": "src/index.html",
+
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
@@ -66,6 +67,34 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
             }
           }
         },
@@ -77,6 +106,9 @@
           "configurations": {
             "production": {
               "browserTarget": "lp1:build:production"
+            },
+            "staging": {
+              "browserTarget": "lp1:build:staging"
             }
           }
         },
@@ -121,11 +153,6 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "lp1:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "lp1:serve:production"
-            }
           }
         }
       }

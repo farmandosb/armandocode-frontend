@@ -22,17 +22,17 @@
               data-dismiss="modal">Botonera de sonidos Zelda</a>
           </li>
          
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!authService.isAuthenticated()">
             <a routerLink="/register" class="nav-link" data-dismiss="modal">Registro</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!authService.isAuthenticated()">
             <a routerLink="/login" class="nav-link" data-dismiss="modal">Iniciar sesión</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated">
-            <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Add post</a>
+            <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Crear Post</a>
           </li>
           <div class="nav-item" *ngIf="authService.isAuthenticated">
             <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
@@ -53,7 +53,7 @@
     aria-controls="modal">
   </button>
 
-  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+  <div class="collapse navbar-collapse justify-content-md-end" id="navbarsExample08">
 
     <ul class="navbar-nav">
       <li class="nav-item active">
@@ -63,25 +63,28 @@
         <a class="nav-link" href="https://introcs.cs.princeton.edu/java/home/" target="_blank"
           data-dismiss="modal">Aprendamos Java</a>
       </li>
-    
-      <li class="nav-item">
-        <a routerLink="/register" class="nav-link" data-dismiss="modal">Registro</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/login" class="nav-link" data-dismiss="modal">Login</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
       </li>
+    
+      
+      <li class="nav-item" *ngIf="!authService.isAuthenticated()">
+        <a routerLink="/login" class="nav-link" data-dismiss="modal">Iniciar sesión</a>
+      </li>
+      <li class="nav-item" *ngIf="!authService.isAuthenticated()">
+        <a routerLink="/register" class="nav-link" data-dismiss="modal">Registro</a>
+      </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()">
-        <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Add post</a>
+        <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Crear Post</a>
       </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()"> 
-        <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
+        <a routerLink="/#" class="nav-link" data-dismiss="modal" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>
 </nav>
+
+
 
 
 
@@ -143,11 +146,13 @@
   <div class="row">
    
     <div class="col-sm-10">
-      <h3>
+      <!--h3>
         Armandocode Blog
         <small class="text-muted">Aprende Java con nosotros.</small>
         
-      </h3>
+      </h3-->
+
+      <!--div><b>Environment API Url: </b>{{env.apiUrl}}</div-->
 
       <router-outlet></router-outlet>
     </div>

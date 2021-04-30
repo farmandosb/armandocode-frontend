@@ -3,19 +3,23 @@
         <h1 class="h3 mb-3 font-weight-normal">Por favor regístrate</h1>
         <div class="form-group">
             <label for="inputUsername" class="sr-only">Nombre de usuario</label>
-            <input type="text" id="inputUsername" [formControlName]="'username'" class="form-control" placeholder="Username" required="" autofocus="">
+            <input type="text" id="inputUsername" [formControlName]="'username'" minlength="5" maxlength="8" class="form-control" placeholder="Nombre de usuario" required="" autofocus="">
+           
         </div>
+
         <div class="form-group">
             <label for="inputEmail" class="sr-only">Correo</label>
-            <input type="text" id="inputEmail" [formControlName]="'email'" class="form-control" placeholder="Email" required="" autofocus="">
+            <input type="text" id="inputEmail" [formControlName]="'email'"   class="form-control" placeholder="Correo" required="" autofocus="">
+           
         </div>
         <div class="form-group">
             <label for="inputPassword" class="sr-only">Contraseña</label>
-            <input type="password" id="inputPassword" [formControlName]="'password'"class="form-control" placeholder="Password" required="" autofocus="">
+            <input type="password" id="inputPassword" [formControlName]="'password'"   class="form-control" placeholder="Contraseña" required="" autofocus="">
+           
         </div>
         <div class="form-group">
-            <label for="inputConfirmPassword" class="sr-only">Confirmar Contraseña</label>
-            <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control" placeholder="Confirm Password" required="" autofocus="">
+            <label for="inputConfirmPassword" class="sr-only">Repite la Contraseña</label>
+            <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'"  required validateEqual="password" class="form-control" placeholder="Repite la contraseña" required="" autofocus="">
         </div>
         <button class="btn btn-lg btn-outline-dark btn-block" type="submit">Registrar</button>
         

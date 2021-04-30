@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+
 .navbar {
     transition: all .4s;
    

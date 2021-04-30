@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { AddPostService } from './add-post.service';
 import { PostPayLoad } from './add-post/post-payload';
 import { AuthService } from './auth/auth.service';
@@ -12,11 +13,12 @@ import { AuthService } from './auth/auth.service';
 })
 
 
-
 export class AppComponent implements OnInit{
   title = 'armandocode';
+  env = environment;
   
     constructor(public authService:AuthService){
+      console.log("enviroment production: "+environment.apiUrl); // Logs false for default environment
   
     }
     ngOnInit(){

@@ -18,9 +18,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.posts = this.postService.getAllPosts();
 
-
-
-
   }
   logout() {
     this.authService.logout();

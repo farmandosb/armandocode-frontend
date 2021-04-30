@@ -14,7 +14,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
       
 
         if (token) {
-            console.log('inside intercept jwt token: ' + token);
+            //console.log('inside intercept jwt token: ' + token);
             const cloned = req.clone({
                 headers: req.headers.set("Authorization",
                     "Bearer " + token)
@@ -23,7 +23,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
             return next.handle(cloned);
         }
         else {
-            console.log('inside intercept not token found in LocalStorage, token= '+token);
+            //console.log('inside intercept not token found in LocalStorage, token= '+token);
             return next.handle(req);
         }
     }
