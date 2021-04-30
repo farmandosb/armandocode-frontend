@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
   env = environment;
   
     constructor(public authService:AuthService){
-      console.log("enviroment production: "+environment.apiUrl); // Logs false for default environment
+      //console.log("enviroment production: "+environment.apiUrl); // Logs false for default environment
   
     }
     ngOnInit(){
