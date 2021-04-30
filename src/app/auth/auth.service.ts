@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
 
   private url = environment.apiUrl+'/api/auth/';
+  private username = this.localStorageService.retrieve('username');
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
