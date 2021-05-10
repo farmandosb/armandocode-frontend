@@ -25,6 +25,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ControlMessages } from './control-messages';
 import { ValidationService } from './validation.service';
 import { LoginSuccessComponent } from './login-success/login-success.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LoginSuccessComponent } from './login-success/login-success.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
