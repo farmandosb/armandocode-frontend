@@ -23,12 +23,16 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.SpinnerService.show();
     this.posts = this.postService.getAllPosts();
-    this.SpinnerService.hide();
+    
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.SpinnerService.hide();
+    }, 5000);
 
   }
   logout() {
-    this.SpinnerService.show();
+   
     this.authService.logout();
-    this.SpinnerService.hide();
+ 
   }
 }
