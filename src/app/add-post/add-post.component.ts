@@ -46,7 +46,7 @@ export class AddPostComponent implements OnInit {
       this.router.navigateByUrl('/');
       this.SpinnerService.hide();
     }, error => {
-      console.log('Fauilure Response');
+      console.log('Failure Response');
       this.SpinnerService.hide();
     })
 
