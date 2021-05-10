@@ -1,30 +1,38 @@
 <div class="container justify-content-center">
-        <div class="row">
-            <div class="col">
-                <div class="row cardpost" *ngFor="let post of posts | async">
-                    <div>
-                        <div class="flex-center">
-                            <div class="post-inline-avatar">
-                                <i class="fas fa-user avatar"></i>
-                            </div>
-                            <div class="post-inline-author">
-                                <a>{{post.username}}</a>
-                                <div>5 min read</div>
-                            </div>
-                            
+    <div class="row">
+        <div class="col">
+            <div *ngIf=authService.isAuthenticated()>
+                <h4>Bienvenido <span class="font-weight-bold font-italic">{{authService.getUsername()}}</span>, puedes agregar un nuevo post <a href="/add-post">aquí</a>
+                </h4>
+            </div>
+
+            <div class="row cardpost" *ngFor="let post of posts | async">
+                <div>
+                    <div class="flex-center">
+                        <div class="post-inline-avatar">
+                            <i class="fas fa-user avatar"></i>
                         </div>
-                        <h3> <a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
-                    
-                        <p [innerHTML]="post.content"></p>
-                        <div>
-                            <a type="button" href="/post/{{post.id}}" class="read-more btn btn-default">Leer más</a>
+                        <div class="post-inline-author">
+                            <a>{{post.username}}</a>
+                            <div>5 min read</div>
                         </div>
-                        
+
                     </div>
-                    
+                    <h3> <a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a></h3>
+
+                    <p [innerHTML]="post.content"></p>
+                    <div>
+                        <a type="button" href="/post/{{post.id}}" class="read-more btn btn-default">Leer más</a>
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
- 
+
+    </div>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+        <p style="color: white">Por favor espere. </p>
+    </ngx-spinner>
+</div>

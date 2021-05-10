@@ -20,7 +20,11 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { HttpClientInterceptor } from './http-client-interceptor';
 import { PostComponent } from './post/post.component';
 import { AuthService } from './auth/auth.service';
-
+import { AuthGuard } from './auth.guard';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ControlMessages } from './control-messages';
+import { ValidationService } from './validation.service';
+import { LoginSuccessComponent } from './login-success/login-success.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { AuthService } from './auth/auth.service';
     HomeComponent,
     HeaderComponent,
     AddPostComponent,
-    PostComponent
+    PostComponent,
+    ControlMessages,
+    LoginSuccessComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +55,12 @@ import { AuthService } from './auth/auth.service';
       { path: 'login', component: LoginComponent },
       { path: 'register-success', component: RegisterSuccessComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'add-post', component: AddPostComponent }
+      { path: 'add-post', component: AddPostComponent,  canActivate: [AuthGuard]}
     ], { relativeLinkResolution: 'legacy' }),
-    EditorModule
+    EditorModule,
+    NgxSpinnerModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, UserService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, UserService, ValidationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

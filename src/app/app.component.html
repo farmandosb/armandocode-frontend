@@ -30,12 +30,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contacto" data-dismiss="modal">Contacto</a>
+            
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated()">
+            <a routerLink="/" class="nav-link" data-dismiss="modal">{{authService.getUsername()}}</a>
           </li>
           <li class="nav-item" *ngIf="authService.isAuthenticated">
             <a routerLink="/add-post" class="nav-link" data-dismiss="modal">Crear Post</a>
           </li>
           <div class="nav-item" *ngIf="authService.isAuthenticated">
-            <button class="btn btn-default logout" data-dismiss="modal" (click)="logout()">Logout</button>
+            <button class="btn btn-default logout mt-3" data-dismiss="modal" (click)="logout()">Cerrar Sesión</button>
           </div>
         </ul>
       </div>
@@ -81,7 +85,7 @@
         <a routerLink="/" class="nav-link" data-dismiss="modal">{{authService.getUsername()}}</a>
       </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()"> 
-        <a routerLink="/" class="nav-link" data-dismiss="modal" (click)="logout()">Logout</a>
+        <a routerLink="/" class="nav-link" data-dismiss="modal" (click)="logout()">Cerrar Sesión</a>
       </li>
     </ul>
   </div>
@@ -149,6 +153,7 @@
   <div class="row">
    
     <div class="col-sm-10">
+      
       <!--h3>
         Armandocode Blog
         <small class="text-muted">Aprende Java con nosotros.</small>
@@ -233,7 +238,9 @@
 
 </div>
 
-
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Por favor espere. </p>
+</ngx-spinner>
 
 
 <footer class="footer position-bottom" id="contacto">
@@ -266,4 +273,5 @@
       </div>
     </div>
   </div>
+  
 </footer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AddPostService } from './add-post.service';
@@ -18,12 +19,17 @@ export class AppComponent implements OnInit{
   env = environment;
   private username;
   
-    constructor(public authService:AuthService){
+    constructor(public authService:AuthService,private spinner: NgxSpinnerService){
       //console.log("enviroment production: "+environment.apiUrl); // Logs false for default environment
       this.username = authService.getUsername;
   
     }
     ngOnInit(){
+      this.spinner.show();
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 5000);
   
     }
     logout(){

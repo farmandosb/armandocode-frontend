@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AddPostService } from '../add-post.service';
 import { PostPayLoad } from './post-payload';
 
@@ -17,7 +18,11 @@ export class AddPostComponent implements OnInit {
   body = new FormControl('');
 
 
-  constructor(private addPostService: AddPostService, private router: Router) {
+  constructor(
+    private addPostService: AddPostService,
+     private router: Router,
+     private SpinnerService: NgxSpinnerService
+     ) {
     this.addPostForm = new FormGroup({
       title: this.title,
       body: this.body
@@ -34,12 +39,15 @@ export class AddPostComponent implements OnInit {
   }
 
   addPost() {
+    this.SpinnerService.show();
     this.postPayLoad.content = this.addPostForm.get('body').value;
     this.postPayLoad.title = this.addPostForm.get('title').value;
     this.addPostService.addPost(this.postPayLoad).subscribe(data => {
       this.router.navigateByUrl('/');
+      this.SpinnerService.hide();
     }, error => {
       console.log('Fauilure Response');
+      this.SpinnerService.hide();
     })
 
   }
