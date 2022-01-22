@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://armandocode-frontend-staging.herokuapp.com/'
+  apiUrl: 'https://armandocode-backend-staging.herokuapp.com/'
 };
