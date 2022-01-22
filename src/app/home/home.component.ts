@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AddPostService } from '../add-post.service';
 import { PostPayLoad } from '../add-post/post-payload';
 import { AuthService } from '../auth/auth.service';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { AuthService } from '../auth/auth.service';
 export class HomeComponent implements OnInit {
 
   posts: Observable<Array<PostPayLoad>>;
+  faUser = faUser;
 
   constructor(
     private postService: AddPostService,
