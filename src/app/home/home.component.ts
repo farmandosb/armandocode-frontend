@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.SpinnerService.hide();
-    }, 5000);
+    }, 1000);
 
   }
   logout() {
