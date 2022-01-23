@@ -26,4 +26,10 @@ export class AddPostService {
     return this.httpCLient.get<PostPayLoad>(this.url+permaLink);
   }
 
+  deletePost(permaLink: Number){
+    console.log("perma: "+permaLink)
+    return this.httpCLient.delete(this.url+"/api/posts/delete/"+permaLink).subscribe(data=> console.log(data));
+  }
+
 }
+  

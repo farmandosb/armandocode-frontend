@@ -37,4 +37,9 @@ export class HomeComponent implements OnInit {
     this.authService.logout();
  
   }
+
+  deletePost(postId){
+    console.log("postid: "+postId)
+    this.postService.deletePost(postId);
+  }
 }

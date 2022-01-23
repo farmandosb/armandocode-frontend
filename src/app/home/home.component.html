@@ -15,6 +15,7 @@
                         <div class="post-inline-author">
                             <a>{{post.username}}</a>
                             <div>{{post.minutesRead}}</div>
+                            <button (click)="deletePost(post.id)" class="btn btn-danger">Eliminar</button>
                         </div>
 
                     </div>
