@@ -10,11 +10,11 @@
                 <div>
                     <div class="flex-center">
                         <div class="post-inline-avatar">
-                            <i class="fas fa-user avatar"></i>
+                            <fa-icon class="avatar" [icon]="faUser"></fa-icon>
                         </div>
                         <div class="post-inline-author">
                             <a>{{post.username}}</a>
-                            <div>5 min read</div>
+                            <div>{{post.minutesRead}}</div>
                         </div>
 
                     </div>

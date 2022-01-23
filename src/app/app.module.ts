@@ -26,6 +26,7 @@ import { ControlMessages } from './control-messages';
 import { ValidationService } from './validation.service';
 import { LoginSuccessComponent } from './login-success/login-success.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
       { path: 'add-post', component: AddPostComponent,  canActivate: [AuthGuard]}
     ], { relativeLinkResolution: 'legacy' }),
     EditorModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FontAwesomeModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }, UserService, ValidationService],
   bootstrap: [AppComponent]

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css"; 
 
-body{
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
 }
 
